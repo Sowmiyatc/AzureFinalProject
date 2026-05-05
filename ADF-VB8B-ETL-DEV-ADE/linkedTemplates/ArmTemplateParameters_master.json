@@ -5,7 +5,19 @@
 		"factoryName": {
 			"value": "ADF-VB8B-ETL-DEV-ADE"
 		},
+		"LS_PARQUET_SF_TARGET_accountKey": {
+			"value": ""
+		},
 		"LS_Parquet_Target_accountKey": {
+			"value": ""
+		},
+		"LS_SNOWFLAKE_SOURCE_password": {
+			"value": ""
+		},
+		"LS_PARQUET_SF_TARGET_properties_typeProperties_url": {
+			"value": "https://adlsdevvbblobade001.dfs.core.windows.net/"
+		},
+		"LS_PARQUET_SF_TARGET1_sasUri": {
 			"value": ""
 		},
 		"LS_Parquet_Target_properties_typeProperties_url": {
@@ -13,6 +25,12 @@
 		},
 		"LS_RestAPI_SRC_properties_typeProperties_url": {
 			"value": "https://retoolapi.dev/OqO6x7/data"
+		},
+		"LS_SNOWFLAKE_SOURCE_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
+		},
+		"LS_SNOWFLAKE_SOURCE_properties_typeProperties_role": {
+			"value": "ACCOUNTADMIN"
 		},
 		"containerUri": {
 			"value": ""

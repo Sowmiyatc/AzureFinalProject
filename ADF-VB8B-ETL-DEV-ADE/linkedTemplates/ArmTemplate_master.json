@@ -7,9 +7,25 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-VB8B-ETL-DEV-ADE"
 		},
+		"LS_PARQUET_SF_TARGET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_SF_TARGET'"
+		},
 		"LS_Parquet_Target_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Parquet_Target'"
+		},
+		"LS_SNOWFLAKE_SOURCE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SNOWFLAKE_SOURCE'"
+		},
+		"LS_PARQUET_SF_TARGET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbblobade001.dfs.core.windows.net/"
+		},
+		"LS_PARQUET_SF_TARGET1_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'LS_PARQUET_SF_TARGET1'"
 		},
 		"LS_Parquet_Target_properties_typeProperties_url": {
 			"type": "string",
@@ -18,6 +34,14 @@
 		"LS_RestAPI_SRC_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://retoolapi.dev/OqO6x7/data"
+		},
+		"LS_SNOWFLAKE_SOURCE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DBAZURESNOW"
+		},
+		"LS_SNOWFLAKE_SOURCE_properties_typeProperties_role": {
+			"type": "string",
+			"defaultValue": "ACCOUNTADMIN"
 		},
 		"containerUri": {
 			"type": "string",
@@ -46,14 +70,32 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_PARQUET_SF_TARGET_accountKey": {
+						"value": "[parameters('LS_PARQUET_SF_TARGET_accountKey')]"
+					},
 					"LS_Parquet_Target_accountKey": {
 						"value": "[parameters('LS_Parquet_Target_accountKey')]"
+					},
+					"LS_SNOWFLAKE_SOURCE_password": {
+						"value": "[parameters('LS_SNOWFLAKE_SOURCE_password')]"
+					},
+					"LS_PARQUET_SF_TARGET_properties_typeProperties_url": {
+						"value": "[parameters('LS_PARQUET_SF_TARGET_properties_typeProperties_url')]"
+					},
+					"LS_PARQUET_SF_TARGET1_sasUri": {
+						"value": "[parameters('LS_PARQUET_SF_TARGET1_sasUri')]"
 					},
 					"LS_Parquet_Target_properties_typeProperties_url": {
 						"value": "[parameters('LS_Parquet_Target_properties_typeProperties_url')]"
 					},
 					"LS_RestAPI_SRC_properties_typeProperties_url": {
 						"value": "[parameters('LS_RestAPI_SRC_properties_typeProperties_url')]"
+					},
+					"LS_SNOWFLAKE_SOURCE_properties_typeProperties_database": {
+						"value": "[parameters('LS_SNOWFLAKE_SOURCE_properties_typeProperties_database')]"
+					},
+					"LS_SNOWFLAKE_SOURCE_properties_typeProperties_role": {
+						"value": "[parameters('LS_SNOWFLAKE_SOURCE_properties_typeProperties_role')]"
 					}
 				}
 			},
