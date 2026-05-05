@@ -3,10 +3,10 @@
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
-		"type": "AzureBlobFS",
+		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"url": "https://adlsdevvbblobade001.dfs.core.windows.net/",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDgwRjY3NTdDLTAwMDItNDBGNi05QTNFLUI0QzZBOTJDMzU4RV9iYTM5YmE5NS1iNGU1LTQxNGQtYjU4OS0xZThjYjQ2NjdjOWYiDQp9"
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=adlsdevvbblobade001;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDgwRjY3NTdDLTAwMDItNDBGNi05QTNFLUI0QzZBOTJDMzU4RV8yNmViMTU0MS01NmM4LTQ1ODktOTg1My1kMmRjNGU2ZTFiODkiDQp9"
 		}
 	}
 }
