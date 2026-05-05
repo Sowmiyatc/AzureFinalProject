@@ -1,0 +1,23 @@
+{
+	"name": "DS_Parquet_API_Target",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Parquet_Target",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('restapi/',\nformatDateTime(utcNow(), 'yyyy') ,'/',\nformatDateTime(utcNow(),'MM'),'/',\nformatDateTime(utcNow(), 'dd')\n)",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
