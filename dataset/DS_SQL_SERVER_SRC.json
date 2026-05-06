@@ -48,10 +48,6 @@
 				"name": "order_estimated_delivery_date",
 				"type": "nvarchar"
 			}
-		],
-		"typeProperties": {
-			"schema": "dbo",
-			"table": "olist_orders_dataset"
-		}
+		]
 	}
 }
