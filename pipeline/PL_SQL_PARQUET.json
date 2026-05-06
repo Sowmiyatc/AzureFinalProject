@@ -79,7 +79,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "ForEach_Copy_Each_Table_Lkp",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -91,6 +91,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('LKP_GET_TABLE_LIST').output.value",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "CPY_ALL_TABLE_ADLS",
