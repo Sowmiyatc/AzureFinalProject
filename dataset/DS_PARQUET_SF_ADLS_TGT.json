@@ -1,0 +1,26 @@
+{
+	"name": "DS_PARQUET_SF_ADLS_TGT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_PARQUET_SF_ADLS_TGT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "\n",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat('snowflake/',\nformatDateTime(utcNow(),'yyyy'), '/',\nformatDateTime(utcNow(),'MM'), '/',\nformatDateTime(utcNow(),'dd')\n)",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "DS_PARQUET_SF_BLOB_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_PARQUET_SF_BLOB_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "data_0_0_0.snappy.parquet",
+				"folderPath": "snowflake/2026/05/05",
+				"container": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
