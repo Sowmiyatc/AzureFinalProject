@@ -1,0 +1,12 @@
+{
+	"name": "DS_LKP_SQL_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_LKP_SQL_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
