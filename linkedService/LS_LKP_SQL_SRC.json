@@ -2,14 +2,6 @@
 	"name": "LS_LKP_SQL_SRC",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
-		"parameters": {
-			"SchemaName": {
-				"type": "string"
-			},
-			"TableName": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "SqlServer",
 		"typeProperties": {
@@ -19,7 +11,7 @@
 			"trustServerCertificate": false,
 			"authenticationType": "Windows",
 			"userName": "DESKTOP-K0FSVE2\\Karthik",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxMWIyNDA3MC1lNzFiLTQzYmItOGI2OC1jYzliOWI3MzY0ZmMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3YjE0YWYzYS0xYTc0LTQ1OTctODM1Yy1jMGE5ZmM5NmM5ZjAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "SelfHostedSQLintegrationRuntime",
