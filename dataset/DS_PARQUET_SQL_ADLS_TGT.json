@@ -1,0 +1,22 @@
+{
+	"name": "DS_PARQUET_SQL_ADLS_TGT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_PARQUET_SQL_ADLS_TGT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('sqlserver/',\nformatDateTime(utcNow(),'yyyy'), '/',\nformatDateTime(utcNow(),'MM'), '/',\nformatDateTime(utcNow(),'dd')\n)",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
