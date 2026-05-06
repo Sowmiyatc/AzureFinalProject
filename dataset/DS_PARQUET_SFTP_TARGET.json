@@ -1,0 +1,22 @@
+{
+	"name": "DS_PARQUET_SFTP_TARGET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_PARQUET_SFTP_TARGET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('sftp/',\nformatDateTime(utcNow(), 'yyyy'), '/',\nformatDateTime(utcNow(), 'MM'), '/',\nformatDateTime(utcNow(), 'dd')\n)",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
