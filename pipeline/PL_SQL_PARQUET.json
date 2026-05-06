@@ -136,7 +136,17 @@
 							"inputs": [
 								{
 									"referenceName": "DS_SQL_SERVER_SRC",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"SchemaName": {
+											"value": "@item().SchemaName",
+											"type": "Expression"
+										},
+										"TableName": {
+											"value": "@item().TableName",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
