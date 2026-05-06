@@ -1,0 +1,19 @@
+{
+	"name": "DS_EXCEL_ADLS_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_EXCEL_ADLS_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "olist_order_reviews_dataset.xlsx",
+				"fileSystem": "excel"
+			}
+		},
+		"schema": []
+	}
+}
