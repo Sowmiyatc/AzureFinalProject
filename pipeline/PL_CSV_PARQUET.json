@@ -101,7 +101,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "@EXEC dbo.vb_get_job_dtls 'pipeline().parameters.Trigger'",
+							"value": "EXEC dbo.vb_get_job_dtls 'pipeline().parameters.Trigger'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
