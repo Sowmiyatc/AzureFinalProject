@@ -72,7 +72,7 @@
 								"type": "Expression"
 							},
 							"filename": {
-								"value": "@activity('LKP_JOB_DETAILS').output.firstRow.sourcefile",
+								"value": "@activity('LKP_JOB_DETAILS').output.firstRow.SourceFile",
 								"type": "Expression"
 							}
 						}
