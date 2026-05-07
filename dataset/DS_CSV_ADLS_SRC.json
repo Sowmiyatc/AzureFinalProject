@@ -5,6 +5,17 @@
 			"referenceName": "LS_CSV_ADLS_SRC",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"storage_account_loc": {
+				"type": "string"
+			},
+			"col_delimiter": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
