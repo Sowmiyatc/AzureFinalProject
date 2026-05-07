@@ -3,7 +3,13 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_CSV_ADLS_SRC",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"storage_account_loc": {
+					"value": "@dataset().storage_account_loc",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"storage_account_loc": {
@@ -21,10 +27,16 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "olist_order_payments_dataset.csv",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
 				"fileSystem": "csv"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": {
+				"value": "@dataset().col_delimiter",
+				"type": "Expression"
+			},
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
