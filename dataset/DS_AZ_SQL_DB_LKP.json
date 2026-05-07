@@ -1,0 +1,17 @@
+{
+	"name": "DS_AZ_SQL_DB_LKP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AZSQLDB_METADATA",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Trigger": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
