@@ -34,7 +34,8 @@
 				"fileName": {
 					"value": "@dataset().SourceFile",
 					"type": "Expression"
-				}
+				},
+				"fileSystem": "excel"
 			},
 			"firstRowAsHeader": true
 		},
