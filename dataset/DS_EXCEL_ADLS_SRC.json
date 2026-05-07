@@ -5,14 +5,26 @@
 			"referenceName": "LS_EXCEL_ADLS_SRC",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"sourcedata": {
+				"type": "string"
+			},
+			"delimter": {
+				"type": "string"
+			},
+			"SourceFile": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Worksheet",
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "olist_order_reviews_dataset.xlsx",
-				"fileSystem": "excel"
+				"fileName": {
+					"value": "@dataset().SourceFile",
+					"type": "Expression"
+				}
 			}
 		},
 		"schema": []
