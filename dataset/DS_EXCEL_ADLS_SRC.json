@@ -3,7 +3,13 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_EXCEL_ADLS_SRC",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"storage_account_loc": {
+					"value": "@dataset().sourcedata",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"sourcedata": {
