@@ -9,7 +9,7 @@
 			"sourcedata": {
 				"type": "string"
 			},
-			"delimter": {
+			"sheetname": {
 				"type": "string"
 			},
 			"SourceFile": {
@@ -19,6 +19,10 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": {
+				"value": "@dataset().sheetname",
+				"type": "Expression"
+			},
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {

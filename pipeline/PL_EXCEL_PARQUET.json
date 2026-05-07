@@ -58,8 +58,8 @@
 								"value": "@activity('LKP_JOB_DETAILS').output.firstRow.sourcedata",
 								"type": "Expression"
 							},
-							"delimter": {
-								"value": "@activity('LKP_JOB_DETAILS').output.firstRow.delimter",
+							"sheetname": {
+								"value": "@activity('LKP_JOB_DETAILS').output.firstRow.sheetname",
 								"type": "Expression"
 							},
 							"SourceFile": {
