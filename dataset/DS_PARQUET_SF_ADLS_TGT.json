@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "\n",
+					"value": "@concat('orders_dataset',formatDateTime(utcNow(),'yyyyMMdd'),'.parquet')\n",
 					"type": "Expression"
 				},
 				"folderPath": {
