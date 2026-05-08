@@ -7,7 +7,7 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-VB8B-ETL-DEV-ADE"
 		},
-		"Event_Trigger_SF_Blob_ADLS_properties_typeProperties_scope": {
+		"EventTRgiger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/34e213f3-0910-4e19-93cf-5a791889bcd8/resourceGroups/VB_DEV_B8_ET/providers/Microsoft.Storage/storageAccounts/adlsdevvbblobade001"
 		}
@@ -1328,7 +1328,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Event_Trigger_SF_Blob_ADLS')]",
+			"name": "[concat(parameters('factoryName'), '/EventTRgiger')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1347,9 +1347,10 @@
 				"typeProperties": {
 					"blobPathBeginsWith": "/input/blobs/snowflake/",
 					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('Event_Trigger_SF_Blob_ADLS_properties_typeProperties_scope')]",
+					"scope": "[parameters('EventTRgiger_properties_typeProperties_scope')]",
 					"events": [
-						"Microsoft.Storage.BlobCreated"
+						"Microsoft.Storage.BlobCreated",
+						"Microsoft.Storage.BlobDeleted"
 					]
 				}
 			},

@@ -175,7 +175,7 @@
 			"type": "string",
 			"defaultValue": "DESKTOP-K0FSVE2\\Karthik"
 		},
-		"Event_Trigger_SF_Blob_ADLS_properties_typeProperties_scope": {
+		"EventTRgiger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/34e213f3-0910-4e19-93cf-5a791889bcd8/resourceGroups/VB_DEV_B8_ET/providers/Microsoft.Storage/storageAccounts/adlsdevvbblobade001"
 		},
@@ -370,8 +370,8 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"Event_Trigger_SF_Blob_ADLS_properties_typeProperties_scope": {
-						"value": "[parameters('Event_Trigger_SF_Blob_ADLS_properties_typeProperties_scope')]"
+					"EventTRgiger_properties_typeProperties_scope": {
+						"value": "[parameters('EventTRgiger_properties_typeProperties_scope')]"
 					}
 				}
 			},
