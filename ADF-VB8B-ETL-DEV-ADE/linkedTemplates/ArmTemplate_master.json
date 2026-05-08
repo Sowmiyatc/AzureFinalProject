@@ -7,6 +7,42 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-VB8B-ETL-DEV-ADE"
 		},
+		"DS_PARQUET_SQL_ADLS_TGT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_PARQUET_SQL_ADLS_TGT'"
+		},
+		"LS_AZSQLDB_METADATA_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_METADATA'"
+		},
+		"LS_BULK_ADLS_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULK_ADLS_SRC'"
+		},
+		"LS_JSON_ADLS_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON_ADLS_SRC'"
+		},
+		"LS_LKP_SQL_SRC_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_LKP_SQL_SRC'"
+		},
+		"LS_PARQUET_BULK_TGT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_BULK_TGT'"
+		},
+		"LS_PARQUET_CSV_TARGET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_CSV_TARGET'"
+		},
+		"LS_PARQUET_CSV_TGT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_CSV_TGT'"
+		},
+		"LS_PARQUET_JSON_TGT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_JSON_TGT'"
+		},
 		"LS_PARQUET_SFTP_TARGET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_SFTP_TARGET'"
@@ -31,49 +67,69 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_SNOWFLAKE_SOURCE'"
 		},
-		"LS_CSV_ADLS_SRC_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS_SRC'"
-		},
-		"LS_PARQUET_CSV_TARGET_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_CSV_TARGET'"
-		},
-		"LS_EXCEL_ADLS_SRC_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_ADLS_SRC'"
-		},
-		"LS_PARQUET_CSV_TGT_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_CSV_TGT'"
-		},
-		"LS_JSON_ADLS_SRC_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_JSON_ADLS_SRC'"
-		},
-		"LS_PARQUET_JSON_TGT_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_JSON_TGT'"
-		},
-		"LS_BULK_ADLS_SRC_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_BULK_ADLS_SRC'"
-		},
-		"LS_PARQUET_BULK_TGT_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_BULK_TGT'"
-		},
 		"LS_SQL_SERVER_SRC_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_SQL_SERVER_SRC'"
 		},
-		"DS_PARQUET_SQL_ADLS_TGT_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'DS_PARQUET_SQL_ADLS_TGT'"
+		"DS_PARQUET_SQL_ADLS_TGT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsourceade001.dfs.core.windows.net/"
 		},
-		"LS_LKP_SQL_SRC_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_LKP_SQL_SRC'"
+		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-srvr-vb-ade-dev1.database.windows.net"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-vb-ade-dev"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "access-data-dev"
+		},
+		"LS_BULK_ADLS_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbrawade001.dfs.core.windows.net/"
+		},
+		"LS_CSV_ADLS_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().storage_account_loc}"
+		},
+		"LS_EXCEL_ADLS_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().storage_account_loc}"
+		},
+		"LS_JSON_ADLS_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbrawade001.dfs.core.windows.net/"
+		},
+		"LS_LKP_SQL_SRC_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-K0FSVE2\\SQLEXPRESS"
+		},
+		"LS_LKP_SQL_SRC_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "ABBVIEPROJECT"
+		},
+		"LS_LKP_SQL_SRC_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "DESKTOP-K0FSVE2\\Karthik"
+		},
+		"LS_PARQUET_BULK_TGT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsourceade001.dfs.core.windows.net/"
+		},
+		"LS_PARQUET_CSV_TARGET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsourceade001.dfs.core.windows.net/"
+		},
+		"LS_PARQUET_CSV_TGT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsourceade001.dfs.core.windows.net/"
+		},
+		"LS_PARQUET_JSON_TGT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsourceade001.dfs.core.windows.net/"
 		},
 		"LS_PARQUET_SFTP_TARGET_properties_typeProperties_url": {
 			"type": "string",
@@ -107,38 +163,6 @@
 			"type": "string",
 			"defaultValue": "ACCOUNTADMIN"
 		},
-		"LS_CSV_ADLS_SRC_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevvbrawade001.dfs.core.windows.net/"
-		},
-		"LS_PARQUET_CSV_TARGET_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevvbsourceade001.dfs.core.windows.net/"
-		},
-		"LS_EXCEL_ADLS_SRC_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevvbrawade001.dfs.core.windows.net/"
-		},
-		"LS_PARQUET_CSV_TGT_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevvbsourceade001.dfs.core.windows.net/"
-		},
-		"LS_JSON_ADLS_SRC_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevvbrawade001.dfs.core.windows.net/"
-		},
-		"LS_PARQUET_JSON_TGT_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevvbsourceade001.dfs.core.windows.net/"
-		},
-		"LS_BULK_ADLS_SRC_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevvbrawade001.dfs.core.windows.net/"
-		},
-		"LS_PARQUET_BULK_TGT_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevvbsourceade001.dfs.core.windows.net/"
-		},
 		"LS_SQL_SERVER_SRC_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "DESKTOP-K0FSVE2\\SQLEXPRESS"
@@ -151,21 +175,9 @@
 			"type": "string",
 			"defaultValue": "DESKTOP-K0FSVE2\\Karthik"
 		},
-		"DS_PARQUET_SQL_ADLS_TGT_properties_typeProperties_url": {
+		"Event_Trigger_SF_Blob_ADLS_properties_typeProperties_scope": {
 			"type": "string",
-			"defaultValue": "https://adlsdevvbsourceade001.dfs.core.windows.net/"
-		},
-		"LS_LKP_SQL_SRC_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "DESKTOP-K0FSVE2\\SQLEXPRESS"
-		},
-		"LS_LKP_SQL_SRC_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "ABBVIEPROJECT"
-		},
-		"LS_LKP_SQL_SRC_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "DESKTOP-K0FSVE2\\Karthik"
+			"defaultValue": "/subscriptions/34e213f3-0910-4e19-93cf-5a791889bcd8/resourceGroups/VB_DEV_B8_ET/providers/Microsoft.Storage/storageAccounts/adlsdevvbblobade001"
 		},
 		"containerUri": {
 			"type": "string",
@@ -194,6 +206,30 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"DS_PARQUET_SQL_ADLS_TGT_accountKey": {
+						"value": "[parameters('DS_PARQUET_SQL_ADLS_TGT_accountKey')]"
+					},
+					"LS_AZSQLDB_METADATA_password": {
+						"value": "[parameters('LS_AZSQLDB_METADATA_password')]"
+					},
+					"LS_BULK_ADLS_SRC_accountKey": {
+						"value": "[parameters('LS_BULK_ADLS_SRC_accountKey')]"
+					},
+					"LS_JSON_ADLS_SRC_accountKey": {
+						"value": "[parameters('LS_JSON_ADLS_SRC_accountKey')]"
+					},
+					"LS_PARQUET_BULK_TGT_accountKey": {
+						"value": "[parameters('LS_PARQUET_BULK_TGT_accountKey')]"
+					},
+					"LS_PARQUET_CSV_TARGET_accountKey": {
+						"value": "[parameters('LS_PARQUET_CSV_TARGET_accountKey')]"
+					},
+					"LS_PARQUET_CSV_TGT_accountKey": {
+						"value": "[parameters('LS_PARQUET_CSV_TGT_accountKey')]"
+					},
+					"LS_PARQUET_JSON_TGT_accountKey": {
+						"value": "[parameters('LS_PARQUET_JSON_TGT_accountKey')]"
+					},
 					"LS_PARQUET_SFTP_TARGET_accountKey": {
 						"value": "[parameters('LS_PARQUET_SFTP_TARGET_accountKey')]"
 					},
@@ -212,32 +248,41 @@
 					"LS_SNOWFLAKE_SOURCE_password": {
 						"value": "[parameters('LS_SNOWFLAKE_SOURCE_password')]"
 					},
-					"LS_CSV_ADLS_SRC_accountKey": {
-						"value": "[parameters('LS_CSV_ADLS_SRC_accountKey')]"
+					"DS_PARQUET_SQL_ADLS_TGT_properties_typeProperties_url": {
+						"value": "[parameters('DS_PARQUET_SQL_ADLS_TGT_properties_typeProperties_url')]"
 					},
-					"LS_PARQUET_CSV_TARGET_accountKey": {
-						"value": "[parameters('LS_PARQUET_CSV_TARGET_accountKey')]"
+					"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
+						"value": "[parameters('LS_AZSQLDB_METADATA_properties_typeProperties_server')]"
 					},
-					"LS_EXCEL_ADLS_SRC_accountKey": {
-						"value": "[parameters('LS_EXCEL_ADLS_SRC_accountKey')]"
+					"LS_AZSQLDB_METADATA_properties_typeProperties_database": {
+						"value": "[parameters('LS_AZSQLDB_METADATA_properties_typeProperties_database')]"
 					},
-					"LS_PARQUET_CSV_TGT_accountKey": {
-						"value": "[parameters('LS_PARQUET_CSV_TGT_accountKey')]"
+					"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AZSQLDB_METADATA_properties_typeProperties_userName')]"
 					},
-					"LS_JSON_ADLS_SRC_accountKey": {
-						"value": "[parameters('LS_JSON_ADLS_SRC_accountKey')]"
+					"LS_BULK_ADLS_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_BULK_ADLS_SRC_properties_typeProperties_url')]"
 					},
-					"LS_PARQUET_JSON_TGT_accountKey": {
-						"value": "[parameters('LS_PARQUET_JSON_TGT_accountKey')]"
+					"LS_CSV_ADLS_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_ADLS_SRC_properties_typeProperties_url')]"
 					},
-					"LS_BULK_ADLS_SRC_accountKey": {
-						"value": "[parameters('LS_BULK_ADLS_SRC_accountKey')]"
+					"LS_EXCEL_ADLS_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_EXCEL_ADLS_SRC_properties_typeProperties_url')]"
 					},
-					"LS_PARQUET_BULK_TGT_accountKey": {
-						"value": "[parameters('LS_PARQUET_BULK_TGT_accountKey')]"
+					"LS_JSON_ADLS_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_JSON_ADLS_SRC_properties_typeProperties_url')]"
 					},
-					"DS_PARQUET_SQL_ADLS_TGT_accountKey": {
-						"value": "[parameters('DS_PARQUET_SQL_ADLS_TGT_accountKey')]"
+					"LS_PARQUET_BULK_TGT_properties_typeProperties_url": {
+						"value": "[parameters('LS_PARQUET_BULK_TGT_properties_typeProperties_url')]"
+					},
+					"LS_PARQUET_CSV_TARGET_properties_typeProperties_url": {
+						"value": "[parameters('LS_PARQUET_CSV_TARGET_properties_typeProperties_url')]"
+					},
+					"LS_PARQUET_CSV_TGT_properties_typeProperties_url": {
+						"value": "[parameters('LS_PARQUET_CSV_TGT_properties_typeProperties_url')]"
+					},
+					"LS_PARQUET_JSON_TGT_properties_typeProperties_url": {
+						"value": "[parameters('LS_PARQUET_JSON_TGT_properties_typeProperties_url')]"
 					},
 					"LS_PARQUET_SFTP_TARGET_properties_typeProperties_url": {
 						"value": "[parameters('LS_PARQUET_SFTP_TARGET_properties_typeProperties_url')]"
@@ -262,33 +307,6 @@
 					},
 					"LS_SNOWFLAKE_SOURCE_properties_typeProperties_role": {
 						"value": "[parameters('LS_SNOWFLAKE_SOURCE_properties_typeProperties_role')]"
-					},
-					"LS_CSV_ADLS_SRC_properties_typeProperties_url": {
-						"value": "[parameters('LS_CSV_ADLS_SRC_properties_typeProperties_url')]"
-					},
-					"LS_PARQUET_CSV_TARGET_properties_typeProperties_url": {
-						"value": "[parameters('LS_PARQUET_CSV_TARGET_properties_typeProperties_url')]"
-					},
-					"LS_EXCEL_ADLS_SRC_properties_typeProperties_url": {
-						"value": "[parameters('LS_EXCEL_ADLS_SRC_properties_typeProperties_url')]"
-					},
-					"LS_PARQUET_CSV_TGT_properties_typeProperties_url": {
-						"value": "[parameters('LS_PARQUET_CSV_TGT_properties_typeProperties_url')]"
-					},
-					"LS_JSON_ADLS_SRC_properties_typeProperties_url": {
-						"value": "[parameters('LS_JSON_ADLS_SRC_properties_typeProperties_url')]"
-					},
-					"LS_PARQUET_JSON_TGT_properties_typeProperties_url": {
-						"value": "[parameters('LS_PARQUET_JSON_TGT_properties_typeProperties_url')]"
-					},
-					"LS_BULK_ADLS_SRC_properties_typeProperties_url": {
-						"value": "[parameters('LS_BULK_ADLS_SRC_properties_typeProperties_url')]"
-					},
-					"LS_PARQUET_BULK_TGT_properties_typeProperties_url": {
-						"value": "[parameters('LS_PARQUET_BULK_TGT_properties_typeProperties_url')]"
-					},
-					"DS_PARQUET_SQL_ADLS_TGT_properties_typeProperties_url": {
-						"value": "[parameters('DS_PARQUET_SQL_ADLS_TGT_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -308,20 +326,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"LS_SQL_SERVER_SRC_password": {
-						"value": "[parameters('LS_SQL_SERVER_SRC_password')]"
-					},
 					"LS_LKP_SQL_SRC_password": {
 						"value": "[parameters('LS_LKP_SQL_SRC_password')]"
 					},
-					"LS_SQL_SERVER_SRC_properties_typeProperties_server": {
-						"value": "[parameters('LS_SQL_SERVER_SRC_properties_typeProperties_server')]"
-					},
-					"LS_SQL_SERVER_SRC_properties_typeProperties_database": {
-						"value": "[parameters('LS_SQL_SERVER_SRC_properties_typeProperties_database')]"
-					},
-					"LS_SQL_SERVER_SRC_properties_typeProperties_userName": {
-						"value": "[parameters('LS_SQL_SERVER_SRC_properties_typeProperties_userName')]"
+					"LS_SQL_SERVER_SRC_password": {
+						"value": "[parameters('LS_SQL_SERVER_SRC_password')]"
 					},
 					"LS_LKP_SQL_SRC_properties_typeProperties_server": {
 						"value": "[parameters('LS_LKP_SQL_SRC_properties_typeProperties_server')]"
@@ -331,6 +340,15 @@
 					},
 					"LS_LKP_SQL_SRC_properties_typeProperties_userName": {
 						"value": "[parameters('LS_LKP_SQL_SRC_properties_typeProperties_userName')]"
+					},
+					"LS_SQL_SERVER_SRC_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_SERVER_SRC_properties_typeProperties_server')]"
+					},
+					"LS_SQL_SERVER_SRC_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_SERVER_SRC_properties_typeProperties_database')]"
+					},
+					"LS_SQL_SERVER_SRC_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_SERVER_SRC_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -351,6 +369,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"Event_Trigger_SF_Blob_ADLS_properties_typeProperties_scope": {
+						"value": "[parameters('Event_Trigger_SF_Blob_ADLS_properties_typeProperties_scope')]"
 					}
 				}
 			},
