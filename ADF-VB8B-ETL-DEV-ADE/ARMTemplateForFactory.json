@@ -174,10 +174,6 @@
 		"LS_SQL_SERVER_SRC_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "DESKTOP-K0FSVE2\\Karthik"
-		},
-		"EventTRgiger_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/34e213f3-0910-4e19-93cf-5a791889bcd8/resourceGroups/VB_DEV_B8_ET/providers/Microsoft.Storage/storageAccounts/adlsdevvbblobade001"
 		}
 	},
 	"variables": {
@@ -2296,7 +2292,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "\n",
+							"value": "@concat('orders_dataset',formatDateTime(utcNow(),'yyyyMMdd'),'.parquet')\n",
 							"type": "Expression"
 						},
 						"folderPath": {
@@ -2326,8 +2322,6 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "data_0_0_0.snappy.parquet",
-						"folderPath": "snowflake/2026/05/05",
 						"container": "input"
 					},
 					"compressionCodec": "snappy"
@@ -2998,6 +2992,7 @@
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
+									"wildcardFileName": "*.parquet",
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -3007,7 +3002,8 @@
 							"sink": {
 								"type": "ParquetSink",
 								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
+									"type": "AzureBlobFSWriteSettings",
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "ParquetWriteSettings"
@@ -3047,37 +3043,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_PARQUET_SF_BLOB_SRC')]",
 				"[concat(variables('factoryId'), '/datasets/DS_PARQUET_SF_ADLS_TGT')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/EventTRgiger')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "PL_SNOWFLAKE_BLOB_ADLS",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "BlobEventsTrigger",
-				"typeProperties": {
-					"blobPathBeginsWith": "/input/blobs/snowflake/",
-					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('EventTRgiger_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated",
-						"Microsoft.Storage.BlobDeleted"
-					]
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/PL_SNOWFLAKE_BLOB_ADLS')]"
 			]
 		}
 	]

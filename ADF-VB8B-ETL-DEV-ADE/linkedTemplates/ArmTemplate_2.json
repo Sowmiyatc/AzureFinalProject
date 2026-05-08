@@ -6,10 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-VB8B-ETL-DEV-ADE"
-		},
-		"EventTRgiger_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/34e213f3-0910-4e19-93cf-5a791889bcd8/resourceGroups/VB_DEV_B8_ET/providers/Microsoft.Storage/storageAccounts/adlsdevvbblobade001"
 		}
 	},
 	"variables": {
@@ -1027,6 +1023,7 @@
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
+									"wildcardFileName": "*.parquet",
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -1036,7 +1033,8 @@
 							"sink": {
 								"type": "ParquetSink",
 								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
+									"type": "AzureBlobFSWriteSettings",
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "ParquetWriteSettings"
@@ -1325,37 +1323,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_LKP_SQL_SRC')]",
 				"[concat(variables('factoryId'), '/datasets/DS_SQL_SERVER_SRC')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/EventTRgiger')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "PL_SNOWFLAKE_BLOB_ADLS",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "BlobEventsTrigger",
-				"typeProperties": {
-					"blobPathBeginsWith": "/input/blobs/snowflake/",
-					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('EventTRgiger_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated",
-						"Microsoft.Storage.BlobDeleted"
-					]
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/PL_SNOWFLAKE_BLOB_ADLS')]"
 			]
 		},
 		{

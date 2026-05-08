@@ -175,10 +175,6 @@
 			"type": "string",
 			"defaultValue": "DESKTOP-K0FSVE2\\Karthik"
 		},
-		"EventTRgiger_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/34e213f3-0910-4e19-93cf-5a791889bcd8/resourceGroups/VB_DEV_B8_ET/providers/Microsoft.Storage/storageAccounts/adlsdevvbblobade001"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -369,9 +365,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"EventTRgiger_properties_typeProperties_scope": {
-						"value": "[parameters('EventTRgiger_properties_typeProperties_scope')]"
 					}
 				}
 			},

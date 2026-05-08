@@ -475,7 +475,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "\n",
+							"value": "@concat('orders_dataset',formatDateTime(utcNow(),'yyyyMMdd'),'.parquet')\n",
 							"type": "Expression"
 						},
 						"folderPath": {
@@ -503,8 +503,6 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "data_0_0_0.snappy.parquet",
-						"folderPath": "snowflake/2026/05/05",
 						"container": "input"
 					},
 					"compressionCodec": "snappy"
