@@ -2,7 +2,7 @@
 	"name": "Event_Trigger_SF_Blob_ADLS",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [
 			{
 				"pipelineReference": {
@@ -17,7 +17,8 @@
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/34e213f3-0910-4e19-93cf-5a791889bcd8/resourceGroups/VB_DEV_B8_ET/providers/Microsoft.Storage/storageAccounts/adlsdevvbblobade001",
 			"events": [
-				"Microsoft.Storage.BlobCreated"
+				"Microsoft.Storage.BlobCreated",
+				"Microsoft.Storage.BlobDeleted"
 			]
 		}
 	}
