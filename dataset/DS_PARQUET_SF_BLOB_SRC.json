@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"folderPath": "snowflake",
 				"container": "input"
 			},
 			"compressionCodec": "snappy"
